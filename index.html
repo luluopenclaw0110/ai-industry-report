@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI 伺服器供應鏈評等報告</title>
 <style>
+.stock-card { scroll-margin-top: 20px; }
+</style>
+
+<style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'PingFang TC', 'Microsoft JhengHei', Arial, sans-serif; background: linear-gradient(135deg, #0f0c29 0%, #1a1a3e 50%, #302b63 100%); color: #fff; min-height: 100vh; padding: 20px; }
 .container { max-width: 1400px; margin: 0 auto; }
@@ -55,37 +59,37 @@ tr:hover { background: rgba(255,255,255,0.05); }
 <tr><th>評等</th><th>股票</th><th>現價</th><th>目標價</th><th>潛在漲幅</th></tr>
 </thead>
 <tbody>
-<tr data-rating="green"><td><span class="rating rating-green">🟢 建議持有</span></td><td><strong>2382 廣達</strong></td><td>NT$340</td><td>NT$401</td><td class="positive">+18%</td></tr>
-<tr data-rating="green"><td><span class="rating rating-green">🟢 建議持有</span></td><td><strong>3231 緯創</strong></td><td>NT$141.5</td><td>NT$170</td><td class="positive">+20%</td></tr>
-<tr data-rating="green"><td><span class="rating rating-green">🟢 建議持有</span></td><td><strong>2317 鴻海</strong></td><td>NT$250</td><td>NT$300</td><td class="positive">+20%</td></tr>
-<tr data-rating="green"><td><span class="rating rating-green">🟢 建議持有</span></td><td><strong>6409 旭隼</strong></td><td>NT$764</td><td>NT$879</td><td class="positive">+15%</td></tr>
-<tr data-rating="green"><td><span class="rating rating-green">🟢 建議持有</span></td><td><strong>2420 建準</strong></td><td>NT$58</td><td>NT$65</td><td class="positive">+12%</td></tr>
-<tr data-rating="blue"><td><span class="rating rating-blue">🔵 成長潛力</span></td><td><strong>2330 台積電</strong></td><td>NT$2255</td><td>NT$2796</td><td class="positive">+24%</td></tr>
-<tr data-rating="blue"><td><span class="rating rating-blue">🔵 成長潛力</span></td><td><strong>3017 奇鋐</strong></td><td>NT$2520</td><td>NT$2898</td><td class="positive">+15%</td></tr>
-<tr data-rating="blue"><td><span class="rating rating-blue">🔵 成長潛力</span></td><td><strong>3324 雙鴻</strong></td><td>NT$1060</td><td>NT$1251</td><td class="positive">+18%</td></tr>
-<tr data-rating="blue"><td><span class="rating rating-blue">🔵 成長潛力</span></td><td><strong>3037 欣興</strong></td><td>NT$875</td><td>NT$997</td><td class="positive">+14%</td></tr>
-<tr data-rating="blue"><td><span class="rating rating-blue">🔵 成長潛力</span></td><td><strong>2344 華邦電</strong></td><td>NT$121.5</td><td>NT$145</td><td class="positive">+19%</td></tr>
-<tr data-rating="blue"><td><span class="rating rating-blue">🔵 成長潛力</span></td><td><strong>2376 技嘉</strong></td><td>NT$321</td><td>NT$379</td><td class="positive">+18%</td></tr>
-<tr data-rating="blue"><td><span class="rating rating-blue">🔵 成長潛力</span></td><td><strong>3081 聯亞</strong></td><td>NT$3055</td><td>NT$3513</td><td class="positive">+15%</td></tr>
-<tr data-rating="yellow"><td><span class="rating rating-yellow">🟡 觀望</span></td><td><strong>2308 台達電</strong></td><td>NT$2195</td><td>NT$2502</td><td class="positive">+14%</td></tr>
-<tr data-rating="yellow"><td><span class="rating rating-yellow">🟡 觀望</span></td><td><strong>3044 健鼎</strong></td><td>NT$481</td><td>NT$548</td><td class="positive">+14%</td></tr>
-<tr data-rating="yellow"><td><span class="rating rating-yellow">🟡 觀望</span></td><td><strong>2313 華通</strong></td><td>NT$260</td><td>NT$299</td><td class="positive">+15%</td></tr>
-<tr data-rating="yellow"><td><span class="rating rating-yellow">🟡 觀望</span></td><td><strong>8210 勤誠</strong></td><td>NT$1550</td><td>NT$1751</td><td class="positive">+13%</td></tr>
-<tr data-rating="yellow"><td><span class="rating rating-yellow">🟡 觀望</span></td><td><strong>2301 光寶</strong></td><td>NT$234.5</td><td>NT$270</td><td class="positive">+15%</td></tr>
-<tr data-rating="yellow"><td><span class="rating rating-yellow">🟡 觀望</span></td><td><strong>2408 南亞科</strong></td><td>NT$321</td><td>NT$360</td><td class="positive">+12%</td></tr>
-<tr data-rating="yellow"><td><span class="rating rating-yellow">🟡 觀望</span></td><td><strong>3013 華立</strong></td><td>NT$110</td><td>NT$125</td><td class="positive">+14%</td></tr>
-<tr data-rating="yellow"><td><span class="rating rating-yellow">🟡 觀望</span></td><td><strong>5457 宣德</strong></td><td>NT$35.7</td><td>NT$40</td><td class="positive">+12%</td></tr>
-<tr data-rating="yellow"><td><span class="rating rating-yellow">🟡 觀望</span></td><td><strong>3693 營邦</strong></td><td>NT$593</td><td>NT$682</td><td class="positive">+15%</td></tr>
-<tr data-rating="yellow"><td><span class="rating rating-yellow">🟡 觀望</span></td><td><strong>2356 英業達</strong></td><td>NT$48.7</td><td>NT$55</td><td class="positive">+13%</td></tr>
+<tr data-rating="green"><td><span class="rating rating-green">🟢 建議持有</span></td><td><a href="#card-2382" style="color:inherit;text-decoration:none;"><strong>2382 廣達</strong></a></td><td>NT$340</td><td>NT$401</td><td class="positive">+18%</td></tr>
+<tr data-rating="green"><td><span class="rating rating-green">🟢 建議持有</span></td><td><a href="#card-3231" style="color:inherit;text-decoration:none;"><strong>3231 緯創</strong></a></td><td>NT$141.5</td><td>NT$170</td><td class="positive">+20%</td></tr>
+<tr data-rating="green"><td><span class="rating rating-green">🟢 建議持有</span></td><td><a href="#card-2317" style="color:inherit;text-decoration:none;"><strong>2317 鴻海</strong></a></td><td>NT$250</td><td>NT$300</td><td class="positive">+20%</td></tr>
+<tr data-rating="green"><td><span class="rating rating-green">🟢 建議持有</span></td><td><a href="#card-6409" style="color:inherit;text-decoration:none;"><strong>6409 旭隼</strong></a></td><td>NT$764</td><td>NT$879</td><td class="positive">+15%</td></tr>
+<tr data-rating="green"><td><span class="rating rating-green">🟢 建議持有</span></td><td><a href="#card-2420" style="color:inherit;text-decoration:none;"><strong>2420 建準</strong></a></td><td>NT$58</td><td>NT$65</td><td class="positive">+12%</td></tr>
+<tr data-rating="blue"><td><span class="rating rating-blue">🔵 成長潛力</span></td><td><a href="#card-2330" style="color:inherit;text-decoration:none;"><strong>2330 台積電</strong></a></td><td>NT$2255</td><td>NT$2796</td><td class="positive">+24%</td></tr>
+<tr data-rating="blue"><td><span class="rating rating-blue">🔵 成長潛力</span></td><td><a href="#card-3017" style="color:inherit;text-decoration:none;"><strong>3017 奇鋐</strong></a></td><td>NT$2520</td><td>NT$2898</td><td class="positive">+15%</td></tr>
+<tr data-rating="blue"><td><span class="rating rating-blue">🔵 成長潛力</span></td><td><a href="#card-3324" style="color:inherit;text-decoration:none;"><strong>3324 雙鴻</strong></a></td><td>NT$1060</td><td>NT$1251</td><td class="positive">+18%</td></tr>
+<tr data-rating="blue"><td><span class="rating rating-blue">🔵 成長潛力</span></td><td><a href="#card-3037" style="color:inherit;text-decoration:none;"><strong>3037 欣興</strong></a></td><td>NT$875</td><td>NT$997</td><td class="positive">+14%</td></tr>
+<tr data-rating="blue"><td><span class="rating rating-blue">🔵 成長潛力</span></td><td><a href="#card-2344" style="color:inherit;text-decoration:none;"><strong>2344 華邦電</strong></a></td><td>NT$121.5</td><td>NT$145</td><td class="positive">+19%</td></tr>
+<tr data-rating="blue"><td><span class="rating rating-blue">🔵 成長潛力</span></td><td><a href="#card-2376" style="color:inherit;text-decoration:none;"><strong>2376 技嘉</strong></a></td><td>NT$321</td><td>NT$379</td><td class="positive">+18%</td></tr>
+<tr data-rating="blue"><td><span class="rating rating-blue">🔵 成長潛力</span></td><td><a href="#card-3081" style="color:inherit;text-decoration:none;"><strong>3081 聯亞</strong></a></td><td>NT$3055</td><td>NT$3513</td><td class="positive">+15%</td></tr>
+<tr data-rating="yellow"><td><span class="rating rating-yellow">🟡 觀望</span></td><td><a href="#card-2308" style="color:inherit;text-decoration:none;"><strong>2308 台達電</strong></a></td><td>NT$2195</td><td>NT$2502</td><td class="positive">+14%</td></tr>
+<tr data-rating="yellow"><td><span class="rating rating-yellow">🟡 觀望</span></td><td><a href="#card-3044" style="color:inherit;text-decoration:none;"><strong>3044 健鼎</strong></a></td><td>NT$481</td><td>NT$548</td><td class="positive">+14%</td></tr>
+<tr data-rating="yellow"><td><span class="rating rating-yellow">🟡 觀望</span></td><td><a href="#card-2313" style="color:inherit;text-decoration:none;"><strong>2313 華通</strong></a></td><td>NT$260</td><td>NT$299</td><td class="positive">+15%</td></tr>
+<tr data-rating="yellow"><td><span class="rating rating-yellow">🟡 觀望</span></td><td><a href="#card-8210" style="color:inherit;text-decoration:none;"><strong>8210 勤誠</strong></a></td><td>NT$1550</td><td>NT$1751</td><td class="positive">+13%</td></tr>
+<tr data-rating="yellow"><td><span class="rating rating-yellow">🟡 觀望</span></td><td><a href="#card-2301" style="color:inherit;text-decoration:none;"><strong>2301 光寶</strong></a></td><td>NT$234.5</td><td>NT$270</td><td class="positive">+15%</td></tr>
+<tr data-rating="yellow"><td><span class="rating rating-yellow">🟡 觀望</span></td><td><a href="#card-2408" style="color:inherit;text-decoration:none;"><strong>2408 南亞科</strong></a></td><td>NT$321</td><td>NT$360</td><td class="positive">+12%</td></tr>
+<tr data-rating="yellow"><td><span class="rating rating-yellow">🟡 觀望</span></td><td><a href="#card-3013" style="color:inherit;text-decoration:none;"><strong>3013 華立</strong></a></td><td>NT$110</td><td>NT$125</td><td class="positive">+14%</td></tr>
+<tr data-rating="yellow"><td><span class="rating rating-yellow">🟡 觀望</span></td><td><a href="#card-5457" style="color:inherit;text-decoration:none;"><strong>5457 宣德</strong></a></td><td>NT$35.7</td><td>NT$40</td><td class="positive">+12%</td></tr>
+<tr data-rating="yellow"><td><span class="rating rating-yellow">🟡 觀望</span></td><td><a href="#card-3693" style="color:inherit;text-decoration:none;"><strong>3693 營邦</strong></a></td><td>NT$593</td><td>NT$682</td><td class="positive">+15%</td></tr>
+<tr data-rating="yellow"><td><span class="rating rating-yellow">🟡 觀望</span></td><td><a href="#card-2356" style="color:inherit;text-decoration:none;"><strong>2356 英業達</strong></a></td><td>NT$48.7</td><td>NT$55</td><td class="positive">+13%</td></tr>
 
-<tr data-rating="blue"><td><span class="rating rating-blue">🔵 成長潛力</span></td><td><strong>1802 台玻</strong></td><td>NT$71.1</td><td>NT$81-88</td><td class="positive">+23%</td></tr>
+<tr data-rating="blue"><td><span class="rating rating-blue">🔵 成長潛力</span></td><td><a href="#card-1802" style="color:inherit;text-decoration:none;"><strong>1802 台玻</strong></a></td><td>NT$71.1</td><td>NT$81-88</td><td class="positive">+23%</td></tr>
 
-<tr data-rating="green"><td><span class="rating rating-green">🟢 建議持有</span></td><td><strong>1519 華城</strong></td><td>NT$914</td><td>NT$1,050</td><td class="positive">+15%</td></tr>
-<tr data-rating="blue"><td><span class="rating rating-blue">🔵 成長潛力</span></td><td><strong>6191 弘塑</strong></td><td>NT$93.8</td><td>NT$112-117</td><td class="positive">+20%</td></tr>
-<tr data-rating="yellow"><td><span class="rating rating-yellow">🟡 觀望</span></td><td><strong>3363 上詮</strong></td><td>NT$920</td><td>NT$1,058-1,150</td><td class="positive">+15%</td></tr>
-<tr data-rating="orange"><td><span class="rating rating-orange">🟠 留意</span></td><td><strong>8046 南電</strong></td><td>NT$900</td><td>NT$954</td><td class="positive">+6%</td></tr>
-<tr data-rating="orange"><td><span class="rating rating-orange">🟠 留意</span></td><td><strong>6282 康舒</strong></td><td>NT$56</td><td>NT$60</td><td class="positive">+7%</td></tr>
-<tr data-rating="orange"><td><span class="rating rating-orange">🟠 留意</span></td><td><strong>3008 大立光</strong></td><td>NT$2795</td><td>NT$2991</td><td class="positive">+7%</td></tr>
+<tr data-rating="green"><td><span class="rating rating-green">🟢 建議持有</span></td><td><a href="#card-1519" style="color:inherit;text-decoration:none;"><strong>1519 華城</strong></a></td><td>NT$914</td><td>NT$1,050</td><td class="positive">+15%</td></tr>
+<tr data-rating="blue"><td><span class="rating rating-blue">🔵 成長潛力</span></td><td><a href="#card-6191" style="color:inherit;text-decoration:none;"><strong>6191 弘塑</strong></a></td><td>NT$93.8</td><td>NT$112-117</td><td class="positive">+20%</td></tr>
+<tr data-rating="yellow"><td><span class="rating rating-yellow">🟡 觀望</span></td><td><a href="#card-3363" style="color:inherit;text-decoration:none;"><strong>3363 上詮</strong></a></td><td>NT$920</td><td>NT$1,058-1,150</td><td class="positive">+15%</td></tr>
+<tr data-rating="orange"><td><span class="rating rating-orange">🟠 留意</span></td><td><a href="#card-8046" style="color:inherit;text-decoration:none;"><strong>8046 南電</strong></a></td><td>NT$900</td><td>NT$954</td><td class="positive">+6%</td></tr>
+<tr data-rating="orange"><td><span class="rating rating-orange">🟠 留意</span></td><td><a href="#card-6282" style="color:inherit;text-decoration:none;"><strong>6282 康舒</strong></a></td><td>NT$56</td><td>NT$60</td><td class="positive">+7%</td></tr>
+<tr data-rating="orange"><td><span class="rating rating-orange">🟠 留意</span></td><td><a href="#card-3008" style="color:inherit;text-decoration:none;"><strong>3008 大立光</strong></a></td><td>NT$2795</td><td>NT$2991</td><td class="positive">+7%</td></tr>
 </tbody>
 </table>
 </div>
@@ -93,7 +97,8 @@ tr:hover { background: rgba(255,255,255,0.05); }
 <div class="section">
 <h2>📊 個股詳細分析（25檔）</h2>
 
-<div class="stock-card" data-rating="blue">
+<div class="stock-card" data-rating="blue" id="card-2330">
+
 <h4><span class="rating rating-blue">🔵 成長潛力</span> 2330 台積電</h4>
 <h5>🏭 產業分析</h5>
 <p>全球晶圓代工龍頭，掌控先進製程技術，AI晶片需求爆發帶動營收持續成長，護城河深厚，市場無可取代。</p>
@@ -103,9 +108,11 @@ tr:hover { background: rgba(255,255,255,0.05); }
 <p>3奈米製程良率優異、5奈米產能滿載，EPS預估達45元以上，本益比仍具吸引力。</p>
 <h5>⭐ 投資建議</h5>
 <p>長線優質持有標的，逢回檔可分批布局，目標價 NT$2,593-2,819（+15-25%），支撐位 NT$1,984，適合定存型投資人。</p>
+
 </div>
 
-<div class="stock-card" data-rating="blue">
+<div class="stock-card" data-rating="blue" id="card-3017">
+
 <h4><span class="rating rating-blue">🔵 成長潛力</span> 3017 奇鋐</h4>
 <h5>🏭 產業分析</h5>
 <p>奇鋐為散熱解決方案大廠，液冷散熱技術領先，瞄準資料中心與AI伺服器商機，營收成長動能強勁。</p>
@@ -115,9 +122,11 @@ tr:hover { background: rgba(255,255,255,0.05); }
 <p>液冷散熱佔營收比重持續提升，毛利率有望改善，配合量產規模經濟，EPS估逾12元。</p>
 <h5>⭐ 投資建議</h5>
 <p>AI散熱趨勢明確，股價整理後方向值得期待，適合中線操作，目標價 NT$2,898-3,150（+15-25%），支撐位 NT$2,218。</p>
+
 </div>
 
-<div class="stock-card" data-rating="blue">
+<div class="stock-card" data-rating="blue" id="card-3324">
+
 <h4><span class="rating rating-blue">🔵 成長潛力</span> 3324 雙鴻</h4>
 <h5>🏭 產業分析</h5>
 <p>雙鴻為散熱模組龍頭，雲端伺服器散熱需求大增，液冷、風冷技術並進，牢牢掌握一線客戶訂單。</p>
@@ -127,9 +136,11 @@ tr:hover { background: rgba(255,255,255,0.05); }
 <p>產品組合優化帶動毛利率回升，營收上看200億元，EPS挑戰20元大關。</p>
 <h5>⭐ 投資建議</h5>
 <p>產業趨勢助攻，基本面無虞，股價若有回測 NT$933 支撐可考慮承接，目標價 NT$1,219-1,325（+15-25%）。</p>
+
 </div>
 
-<div class="stock-card" data-rating="blue">
+<div class="stock-card" data-rating="blue" id="card-3037">
+
 <h4><span class="rating rating-blue">🔵 成長潛力</span> 3037 欣興</h4>
 <h5>🏭 產業分析</h5>
 <p>欣興為IC載板龍頭，ABF載板受惠AI晶片需求爆發，先進封裝載板訂單暢旺，產能利用率逐步回升。</p>
@@ -139,9 +150,11 @@ tr:hover { background: rgba(255,255,255,0.05); }
 <p>ABF載板供需結構改善，產能利用率估達80%以上，EPS有機會挑戰6-7元。</p>
 <h5>⭐ 投資建議</h5>
 <p>基本面谷底回升，適合逢低布局，支撐約 NT$770，突破後加碼，目標價 NT$1,006-1,094（+15-25%）。</p>
+
 </div>
 
-<div class="stock-card" data-rating="blue">
+<div class="stock-card" data-rating="blue" id="card-2344">
+
 <h4><span class="rating rating-blue">🔵 成長潛力</span> 2344 華邦電</h4>
 <h5>🏭 產業分析</h5>
 <p>華邦電為利基型記憶體大廠，NOR Flash與DRAM雙引擎，耕耘車用、工業、通訊領域，營運逐步回穩。</p>
@@ -151,9 +164,11 @@ tr:hover { background: rgba(255,255,255,0.05); }
 <p>記憶體景氣循環處於回升初期，毛利率有望逐季改善，EPS估2.5-3元。</p>
 <h5>⭐ 投資建議</h5>
 <p>景氣循環股，適合耐心等待，股價整理區間分批承接，目標價 NT$140-152（+15-25%），支撐位 NT$107。</p>
+
 </div>
 
-<div class="stock-card" data-rating="blue">
+<div class="stock-card" data-rating="blue" id="card-2376">
+
 <h4><span class="rating rating-blue">🔵 成長潛力</span> 2376 技嘉</h4>
 <h5>🏭 產業分析</h5>
 <p>技嘉為主機板/顯示卡/伺服器大廠，AI伺服器主機板需求暢旺，輝達RTX系列顯示卡熱銷帶動營收成長。</p>
@@ -163,9 +178,11 @@ tr:hover { background: rgba(255,255,255,0.05); }
 <p>營收成長強勁，主機板龍頭地位穩固，AI趨勢受惠明確，殖利率2.5%。</p>
 <h5>⭐ 投資建議</h5>
 <p>成長型標的，股價回調可分批布局，目標價 NT$369-401（+15-25%），支撐位 NT$282，適合積極型投資人。</p>
+
 </div>
 
-<div class="stock-card" data-rating="blue">
+<div class="stock-card" data-rating="blue" id="card-3081">
+
 <h4><span class="rating rating-blue">🔵 成長潛力</span> 3081 聯亞</h4>
 <h5>🏭 產業分析</h5>
 <p>聯亞為半導體雷射/光探測器晶片廠，矽光子產品已小量出貨，光通訊元件需求暢旺，CPO趨勢潛力大。</p>
@@ -175,9 +192,11 @@ tr:hover { background: rgba(255,255,255,0.05); }
 <p>技術領先但規模有限，需時間發酵，殖利率2.1%。</p>
 <h5>⭐ 投資建議</h5>
 <p>光通訊長線標的，股價整理區間操作，目標價 NT$3,513-3,819（+15-25%），支撐位 NT$2,688，主題性與實質營收需持續追蹤。</p>
+
 </div>
 
-<div class="stock-card" data-rating="green">
+<div class="stock-card" data-rating="green" id="card-2382">
+
 <h4><span class="rating rating-green">🟢 建議持有</span> 2382 廣達</h4>
 <h5>🏭 產業分析</h5>
 <p>廣達為AI伺服器ODM大廠，輝達GB200機櫃組裝獨家供應，雲端需求爆發帶動營收與毛利同步提升。</p>
@@ -187,9 +206,11 @@ tr:hover { background: rgba(255,255,255,0.05); }
 <p>AI伺服器佔營收突破六成，毛利率同步走高，EPS上看12元。</p>
 <h5>⭐ 投資建議</h5>
 <p>基本面正向，適合中長線持有，目標價 NT$391-425（+15-25%），支撐位 NT$299，突破後再加碼。</p>
+
 </div>
 
-<div class="stock-card" data-rating="green">
+<div class="stock-card" data-rating="green" id="card-3231">
+
 <h4><span class="rating rating-green">🟢 建議持有</span> 3231 緯創</h4>
 <h5>🏭 產業分析</h5>
 <p>緯創為AI伺服器與筆電代工大廠，顯示卡與AI伺服器雙軌並進，受惠AI基礎建設擴張，營運進入成長循環。</p>
@@ -199,9 +220,11 @@ tr:hover { background: rgba(255,255,255,0.05); }
 <p>AI伺服器訂單能見度高，營收挑戰兆元大關，EPS估達5.5-6元。</p>
 <h5>⭐ 投資建議</h5>
 <p>AI受惠股，適合區間操作，目標價 NT$163-177（+15-25%），支撐位 NT$125，可順勢而為。</p>
+
 </div>
 
-<div class="stock-card" data-rating="green">
+<div class="stock-card" data-rating="green" id="card-2317">
+
 <h4><span class="rating rating-green">🟢 建議持有</span> 2317 鴻海</h4>
 <h5>🏭 產業分析</h5>
 <p>鴻海為全球電子製造服務巨頭，AI伺服器、電動車、機器人三大引擎布局完整，營運回升態勢明確。</p>
@@ -211,9 +234,11 @@ tr:hover { background: rgba(255,255,255,0.05); }
 <p>AI伺服器佔營收比重提升，EPS估達9.5-10元，股息殖利率具吸引力。</p>
 <h5>⭐ 投資建議</h5>
 <p>價值型投資首選，分批布局作長期持有，目標價 NT$288-312（+15-25%），支撐位 NT$220。</p>
+
 </div>
 
-<div class="stock-card" data-rating="green">
+<div class="stock-card" data-rating="green" id="card-6409">
+
 <h4><span class="rating rating-green">🟢 建議持有</span> 6409 旭隼</h4>
 <h5>🏭 產業分析</h5>
 <p>旭隼為不斷電系統（UPS）大廠，資料中心與雲端業者備援需求穩健，長期耕耘電信、工業級客戶，訂單黏著度高。</p>
@@ -223,9 +248,11 @@ tr:hover { background: rgba(255,255,255,0.05); }
 <p>產品高附加價值，毛利率逾40%，EPS估達25-27元，現金殖利率表現優異。</p>
 <h5>⭐ 投資建議</h5>
 <p>防御型成長股，適合保守型投資人，目標價 NT$879-955（+15-25%），支撐位 NT$672，長線持有穩定收息。</p>
+
 </div>
 
-<div class="stock-card" data-rating="green">
+<div class="stock-card" data-rating="green" id="card-2420">
+
 <h4><span class="rating rating-green">🟢 建議持有</span> 2420 建準</h4>
 <h5>🏭 產業分析</h5>
 <p>建準為散熱風扇與散熱模組大廠，伺服器與網通產品散熱需求升溫，車用散熱亦逐步放量。</p>
@@ -235,9 +262,11 @@ tr:hover { background: rgba(255,255,255,0.05); }
 <p>散熱風扇單價提升，產品組合優化，營收估突破120億元，EPS上看6-7元。</p>
 <h5>⭐ 投資建議</h5>
 <p>產業趨勢溫和向上，股價整理後方向趨向突破，目標價 NT$67-72（+15-25%），支撐位 NT$51，適合中線操作。</p>
+
 </div>
 
-<div class="stock-card" data-rating="yellow">
+<div class="stock-card" data-rating="yellow" id="card-2308">
+
 <h4><span class="rating rating-yellow">🟡 觀望</span> 2308 台達電</h4>
 <h5>🏭 產業分析</h5>
 <p>台達電為電源供應器龍頭，AI伺服器電源需求暢旺，但PE已反映過多AI利多，評價偏高。</p>
@@ -247,9 +276,11 @@ tr:hover { background: rgba(255,255,255,0.05); }
 <p>PE偏高、殖利率低，營收成長穩健但不足以支撐當前評價。</p>
 <h5>⭐ 投資建議</h5>
 <p>觀望為宜，耐心等待回檔至合理價位，目標價 NT$2,524-2,744（+15-25%），支撐位 NT$1,932，PE回到70x以下再考慮。</p>
+
 </div>
 
-<div class="stock-card" data-rating="yellow">
+<div class="stock-card" data-rating="yellow" id="card-3044">
+
 <h4><span class="rating rating-yellow">🟡 觀望</span> 3044 健鼎</h4>
 <h5>🏭 產業分析</h5>
 <p>健鼎為PCB大廠，HDI板技術成熟，伺服器PCB需求穩健，但PCB占AI伺服器價值量低，實質受惠程度有限。</p>
@@ -259,9 +290,11 @@ tr:hover { background: rgba(255,255,255,0.05); }
 <p>營收成長穩健，殖利率中等，評價合理但不吸引人。</p>
 <h5>⭐ 投資建議</h5>
 <p>區間操作看待，目標價 NT$553-601（+15-25%），支撐位 NT$423，適合價值型投資人不適合追求成長者。</p>
+
 </div>
 
-<div class="stock-card" data-rating="yellow">
+<div class="stock-card" data-rating="yellow" id="card-2313">
+
 <h4><span class="rating rating-yellow">🟡 觀望</span> 2313 華通</h4>
 <h5>🏭 產業分析</h5>
 <p>華通為HDI板龍頭，Any-layer HDI技術領先，受惠手機與伺服器升級趨勢，但本業以手機為主，AI貢獻有限。</p>
@@ -271,9 +304,11 @@ tr:hover { background: rgba(255,255,255,0.05); }
 <p>營收成長中等，殖利率偏低，評價已反映部分AI利多。</p>
 <h5>⭐ 投資建議</h5>
 <p>觀望為主，目標價 NT$299-325（+15-25%），支撐位 NT$229，等待更好的買點。</p>
+
 </div>
 
-<div class="stock-card" data-rating="yellow">
+<div class="stock-card" data-rating="yellow" id="card-8210">
+
 <h4><span class="rating rating-yellow">🟡 觀望</span> 8210 勤誠</h4>
 <h5>🏭 產業分析</h5>
 <p>勤誠為機殼/機構件大廠，AI伺服器機殼規格升級帶動單價提升，但中國蘇州廠產能利用率仍是觀察重點。</p>
@@ -283,9 +318,11 @@ tr:hover { background: rgba(255,255,255,0.05); }
 <p>營收成長強勁，殖利率中等，機構件單價提升有助毛利改善。</p>
 <h5>⭐ 投資建議</h5>
 <p>營收動能佳但評價偏高，股價回測 NT$1,364 支撐可分批布局，目標價 NT$1,782-1,938（+15-25%）。</p>
+
 </div>
 
-<div class="stock-card" data-rating="yellow">
+<div class="stock-card" data-rating="yellow" id="card-2301">
+
 <h4><span class="rating rating-yellow">🟡 觀望</span> 2301 光寶</h4>
 <h5>🏭 產業分析</h5>
 <p>光寶為電源供應器老牌大廠，IT電源事業穩健，但AI電源佔營收比不如台達電，成長性相對受限。</p>
@@ -295,9 +332,11 @@ tr:hover { background: rgba(255,255,255,0.05); }
 <p>殖利率不錯，適合穩健型投資人。</p>
 <h5>⭐ 投資建議</h5>
 <p>穩健標的，殖利率有吸引力，目標價 NT$270-293（+15-25%），支撐位 NT$206，長期持有穩定收息。</p>
+
 </div>
 
-<div class="stock-card" data-rating="yellow">
+<div class="stock-card" data-rating="yellow" id="card-2408">
+
 <h4><span class="rating rating-yellow">🟡 觀望</span> 2408 南亞科</h4>
 <h5>🏭 產業分析</h5>
 <p>南亞科為DRAM大廠，DDR4/DDR5均有佈局，但先進製程落後三星與SK海力士，HBM市場缺席。</p>
@@ -307,9 +346,11 @@ tr:hover { background: rgba(255,255,255,0.05); }
 <p>營收呈現低基期反彈，ROE偏低，景氣循環股操作難度高。</p>
 <h5>⭐ 投資建議</h5>
 <p>景氣循環股操作難度高，觀望為主，目標價 NT$369-401（+15-25%），支撐位 NT$282，等待DRAM報價實質回升再評估進場。</p>
+
 </div>
 
-<div class="stock-card" data-rating="yellow">
+<div class="stock-card" data-rating="yellow" id="card-3013">
+
 <h4><span class="rating rating-yellow">🟡 觀望</span> 3013 華立</h4>
 <h5>🏭 產業分析</h5>
 <p>華立為散熱膏/材料供應商，散熱介面材料（TIM）應用於伺服器與車用，市場規模較小但穩定。</p>
@@ -319,9 +360,11 @@ tr:hover { background: rgba(255,255,255,0.05); }
 <p>殖利率偏低，散熱材料事業穩健但缺乏爆發力。</p>
 <h5>⭐ 投資建議</h5>
 <p>題材性較淡，目標價 NT$126-138（+15-25%），支撐位 NT$97，適合一般投資人而非積極型。</p>
+
 </div>
 
-<div class="stock-card" data-rating="yellow">
+<div class="stock-card" data-rating="yellow" id="card-5457">
+
 <h4><span class="rating rating-yellow">🟡 觀望</span> 5457 宣德</h4>
 <h5>🏭 產業分析</h5>
 <p>宣德為連接器廠，光纖連接器應用於網通與資料中心，但規模較小，營運容易受到單一客戶影響。</p>
@@ -331,9 +374,11 @@ tr:hover { background: rgba(255,255,255,0.05); }
 <p>殖利率佳但營收小幅衰退，評價已反映轉機題材。</p>
 <h5>⭐ 投資建議</h5>
 <p>價值型操作，殖利率佳但成長性有限，目標價 NT$41-45（+15-25%），支撐位 NT$31，耐心持有。</p>
+
 </div>
 
-<div class="stock-card" data-rating="yellow">
+<div class="stock-card" data-rating="yellow" id="card-3693">
+
 <h4><span class="rating rating-yellow">🟡 觀望</span> 3693 營邦</h4>
 <h5>🏭 產業分析</h5>
 <p>營邦為機殼/系統解決方案專家，工業電腦與伺服器機殼為主，客製化程度高，訂單黏著度佳。</p>
@@ -343,9 +388,11 @@ tr:hover { background: rgba(255,255,255,0.05); }
 <p>營收成長，殖利率不錯，規模經濟逐步顯現。</p>
 <h5>⭐ 投資建議</h5>
 <p>穩健操作，目標價 NT$682-741（+15-25%），支撐位 NT$522，適合資產型投資人長期持有。</p>
+
 </div>
 
-<div class="stock-card" data-rating="yellow">
+<div class="stock-card" data-rating="yellow" id="card-2356">
+
 <h4><span class="rating rating-yellow">🟡 觀望</span> 2356 英業達</h4>
 <h5>🏭 產業分析</h5>
 <p>英業達為伺服器/筆電代工大廠，伺服器ODM能力受惠AI趨勢，但系統組装毛利偏低，附加價值有限。</p>
@@ -355,9 +402,11 @@ tr:hover { background: rgba(255,255,255,0.05); }
 <p>殖利率不錯，但營收衰退顯示訂單能見度不佳，基本面有壓力。</p>
 <h5>⭐ 投資建議</h5>
 <p>謹慎看待，營收衰退趨勢未扭轉前不建議加碼，目標價 NT$56-61（+15-25%），支撐位 NT$43，觀望為主。</p>
+
 </div>
 
-<div class="stock-card" data-rating="orange">
+<div class="stock-card" data-rating="orange" id="card-8046">
+
 <h4><span class="rating rating-orange">🟠 留意</span> 8046 南電</h4>
 <h5>🏭 產業分析</h5>
 <p>南電為IC載板大廠，ABF載板受惠AI需求，但PE極高，ROE顯示體質虛弱，評價與基本面脫鉤。</p>
@@ -367,9 +416,11 @@ tr:hover { background: rgba(255,255,255,0.05); }
 <p>ROE顯示資金運用效率差，殖利率偏低，警訊明確。</p>
 <h5>⭐ 投資建議</h5>
 <p>高風險標的，建議避開或減碼，目標價 NT$1,035-1,125（+15-25%），支撐位 NT$792。</p>
+
 </div>
 
-<div class="stock-card" data-rating="orange">
+<div class="stock-card" data-rating="orange" id="card-6282">
+
 <h4><span class="rating rating-orange">🟠 留意</span> 6282 康舒</h4>
 <h5>🏭 產業分析</h5>
 <p>康舒為電源供應器廠，PE極高反映轉型AI電源夢想，但實際AI電源貢獻營收有限，體質弱。</p>
@@ -379,9 +430,11 @@ tr:hover { background: rgba(255,255,255,0.05); }
 <p>EPS低，PE完全反映夢想而非實質，ROE顯示體質虛弱。</p>
 <h5>⭐ 投資建議</h5>
 <p>高風險投機標的，現階段不建議投資，目標價 NT$64-70（+15-25%），支撐位 NT$49，等待實質營收改觀再評估。</p>
+
 </div>
 
-<div class="stock-card" data-rating="orange">
+<div class="stock-card" data-rating="orange" id="card-3008">
+
 <h4><span class="rating rating-orange">🟠 留意</span> 3008 大立光</h4>
 <h5>🏭 產業分析</h5>
 <p>大立光為手機鏡頭龍頭，本業面臨手機規格升級放緩、競爭加劇（舜宇光學）壓力，跨界CPO/光通訊仍在初期。</p>
@@ -391,17 +444,19 @@ tr:hover { background: rgba(255,255,255,0.05); }
 <p>本業成長放緩，新事業貢獻時間表不明，營收動能不足。</p>
 <h5>⭐ 投資建議</h5>
 <p>本業承壓但長線仍可期待，目標價 NT$3,214-3,494（+15-25%），支撐位 NT$2,460，跌破再評估長線布局機會。</p>
-</div>
 
 </div>
 
+</div>
 
 
 
 
 
 
-<div class="stock-card" data-rating="green">
+
+<div class="stock-card" data-rating="green" id="card-1519">
+
 <h4><span class="rating rating-green">🟢 建議持有</span> 1519 華城</h4>
 <h5>🏭 產業分析</h5>
 <p>華城為重電設備大廠，提供AI資料中心所需的變壓器、配電盤等電力設備。電力需求爆發直接受惠，營收穩健成長。</p>
@@ -411,9 +466,11 @@ tr:hover { background: rgba(255,255,255,0.05); }
 <p>電力設備為AI伺服器剛性需求，毛利率穩定，殖利率佳。2025年EPS估達6-7元，評價合理偏低。</p>
 <h5>⭐ 投資建議</h5>
 <p>防御型AI標的，目標價 NT$1,050（+15%），支撐位 NT$805，適合穩健型投資人長期持有。</p>
+
 </div>
 
-<div class="stock-card" data-rating="blue">
+<div class="stock-card" data-rating="blue" id="card-6191">
+
 <h4><span class="rating rating-blue">🔵 成長潛力</span> 6191 弘塑</h4>
 <h5>🏭 產業分析</h5>
 <p>弘塑為半導體濕製程設備廠，提供CoWoS先進封裝所需的濕蝕刻、清洗設備。技術門檻高，已通過一線大廠認證。</p>
@@ -423,9 +480,11 @@ tr:hover { background: rgba(255,255,255,0.05); }
 <p>濕製程設備為CoWoS瓶頸之一，毛利率約40%。2025年營收估突破20億元，EPS估3-4元，成長性值得期待。</p>
 <h5>⭐ 投資建議</h5>
 <p>先進封裝題材明確，目標價 NT$112-117（+20%），支撐位 NT$82，適合中線操作。</p>
+
 </div>
 
-<div class="stock-card" data-rating="yellow">
+<div class="stock-card" data-rating="yellow" id="card-3363">
+
 <h4><span class="rating rating-yellow">🟡 觀望</span> 3363 上詮</h4>
 <h5>🏭 產業分析</h5>
 <p>上詮為光通訊元件廠，切入CPO（共同封裝光學）和矽光子領域。光通訊為AI伺服器高速傳輸關鍵技術。</p>
@@ -435,9 +494,11 @@ tr:hover { background: rgba(255,255,255,0.05); }
 <p>本益比偏高，營收成長放緩。光通訊長線題材明確，但短期貢獻有限，適度關注即可。</p>
 <h5>⭐ 投資建議</h5>
 <p>主題性投資，目標價 NT$1,058-1,150（+15%），支撐位 NT$810。高波動，設停損區操作。</p>
+
 </div>
 
-<div class="stock-card" data-rating="blue">
+<div class="stock-card" data-rating="blue" id="card-1802">
+
 <h4><span class="rating rating-blue">🔵 成長潛力</span> 1802 台玻</h4>
 <h5>🏭 產業分析</h5>
 <p>台灣最大玻璃製造商，轉型AI高階材料供應商。核心產品為Low DK/Low Df/Low CTE玻璃纖維布，為AI GPU、高速傳輸、CoWoS封裝的重要材料。</p>
@@ -447,6 +508,7 @@ tr:hover { background: rgba(255,255,255,0.05); }
 <p>台灣唯一、全球第三家能量產Low DK玻纖布。市場定位從「景氣循環股」轉為「AI材料股」，估值邏輯完全不同。</p>
 <h5>⭐ 投資建議</h5>
 <p>成長型標的，目標價 NT$81-88（+23%），支撐位 NT$62。需注意傳統本業仍在拖累，需持續追蹤AI營收佔比。</p>
+
 </div>
 
 <script>
