@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI 產業鏈深度分析報告</title>
+<title>AI 伺服器供應鏈評等報告</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'PingFang TC', 'Microsoft JhengHei', Arial, sans-serif; background: linear-gradient(135deg, #0f0c29 0%, #1a1a3e 50%, #302b63 100%); color: #fff; min-height: 100vh; padding: 20px; }
@@ -13,11 +13,7 @@ body { font-family: 'PingFang TC', 'Microsoft JhengHei', Arial, sans-serif; back
 .header .subtitle { color: rgba(255,255,255,0.9); font-size: 1rem; }
 .section { background: rgba(255,255,255,0.1); border-radius: 15px; padding: 25px; margin-bottom: 25px; }
 h2 { color: #ffd700; margin-bottom: 20px; font-size: 1.5rem; border-bottom: 2px solid rgba(255,215,0,0.3); padding-bottom: 10px; }
-.tier-badge { display: inline-block; padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; margin-bottom: 15px; }
-.tier-upstream { background: linear-gradient(135deg, #ff6b6b, #feca57); }
-.tier-midstream { background: linear-gradient(135deg, #feca57, #48dbfb); }
-.tier-downstream { background: linear-gradient(135deg, #1dd1a1, #55efc4); }
-.tier-next { background: linear-gradient(135deg, #a29bfe, #6c5ce7); }
+h3 { color: #ffd700; margin-top: 20px; margin-bottom: 15px; }
 table { width: 100%; border-collapse: collapse; margin-top: 15px; }
 th { background: rgba(102,126,234,0.5); padding: 12px; text-align: left; font-size: 0.85rem; }
 td { padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; }
@@ -27,526 +23,72 @@ tr:hover { background: rgba(255,255,255,0.05); }
 .rating-blue { background: #58A6FF; color: #fff; }
 .rating-yellow { background: #D29922; color: #fff; }
 .rating-orange { background: #F0883E; color: #fff; }
-.rating-red { background: #F85149; color: #fff; }
 .positive { color: #3FB950; }
 .negative { color: #F85149; }
-.summary-box { background: rgba(63,185,80,0.2); border: 1px solid #3FB950; border-radius: 10px; padding: 20px; margin-top: 20px; }
-.summary-box h3 { color: #3FB950; margin-bottom: 10px; }
-.tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 15px; }
-.tech-card { background: rgba(255,255,255,0.1); border-radius: 10px; padding: 15px; }
-.tech-card h4 { color: #ffd700; margin-bottom: 8px; }
-.tech-status { font-size: 0.75rem; color: #aaa; margin: 3px 0; }
-.invest-tag { display: inline-block; padding: 3px 8px; border-radius: 5px; font-size: 0.7rem; margin-top: 5px; }
-.buy { background: #3FB950; color: #fff; }
-.avoid { background: #F85149; color: #fff; }
+.stock-card { background: rgba(255,255,255,0.1); border-radius: 10px; padding: 15px; margin-bottom: 15px; }
+.stock-card h4 { color: #ffd700; margin-bottom: 10px; }
+.reason { font-size: 0.8rem; color: #aaa; margin-top: 8px; }
 .footer { text-align: center; margin-top: 30px; color: rgba(255,255,255,0.5); font-size: 0.8rem; }
-@media (max-width: 768px) { table { font-size: 0.75rem; } th, td { padding: 8px 5px; } }
 </style>
 </head>
 <body>
 <div class="container">
 <div class="header">
-<h1>🤖 AI 產業鏈深度分析報告</h1>
-<p class="subtitle">AI 上中下游產業 × 先進封裝/光通訊技術 | 更新時間: 2026-05-12</p>
+<h1>🤖 AI 伺服器供應鏈評等報告</h1>
+<p class="subtitle">20檔台股完整評估 | 更新時間: 2026-05-12</p>
 </div>
 
-<!-- 上游：AI 晶片/GPU -->
 <div class="section">
-<h2>🔴 上游：AI 晶片 / GPU</h2>
-<span class="tier-badge tier-upstream">晶片設計 × GPU × 先進製程</span>
+<h2>🏆 評等總覽</h2>
 <table>
 <thead>
-<tr>
-<th>股票</th>
-<th>現價</th>
-<th>本益比</th>
-<th>預估本益比</th>
-<th>營收年增</th>
-<th>ROE</th>
-<th>評等</th>
-</tr>
+<tr><th>評等</th><th>股票</th><th>現價</th><th>目標價</th><th>潛在漲幅</th><th>評核理由</th></tr>
 </thead>
 <tbody>
-<tr>
-<td><strong>NVDA 輝達</strong></td>
-<td>$219.44</td>
-<td>44.87x</td>
-<td>19.44x</td>
-<td class="positive">+73.2%</td>
-<td>101%</td>
-<td><span class="rating rating-yellow">🟡 觀望</span></td>
-</tr>
-<tr>
-<td><strong>AMD 超微</strong></td>
-<td>$458.79</td>
-<td>153.96x</td>
-<td>35.63x</td>
-<td class="positive">+37.8%</td>
-<td>8.1%</td>
-<td><span class="rating rating-orange">🟠 留意</span></td>
-</tr>
-<tr>
-<td><strong>2330.TW 台積電</strong></td>
-<td>NT$2255</td>
-<td>30.66x</td>
-<td>18.66x</td>
-<td class="positive">+35.1%</td>
-<td>36.2%</td>
-<td><span class="rating rating-blue">🔵 成長潛力</span></td>
-</tr>
-</tbody>
-</table>
-<p style="margin-top:10px;font-size:0.8rem;color:#aaa;">
-💡 觀察：NVDA 本益比44.87偏高，股價接近52週高點。AMD PE 153.96過高是最大風險。台積電體質最佳，Forward PE 18.66本益比合理。
-</p>
-</div>
-
-<!-- 中游：伺服器/代工 -->
-<div class="section">
-<h2>🟡 中游：伺服器 / 代工</h2>
-<span class="tier-badge tier-midstream">AI 伺服器 × 代工 × 主機板</span>
-<table>
-<thead>
-<tr>
-<th>股票</th>
-<th>股價</th>
-<th>本益比</th>
-<th>預估本益比</th>
-<th>營收(億)</th>
-<th>營收年增</th>
-<th>ROE</th>
-<th>評等</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>2317 鴻海</strong></td>
-<td>NT$250.5</td>
-<td>18.68x</td>
-<td>12.43x</td>
-<td>8,103</td>
-<td class="positive">+22.3%</td>
-<td>11.25%</td>
-<td><span class="rating rating-yellow">🟡 觀望</span></td>
-</tr>
-<tr>
-<td><strong>2382 廣達</strong></td>
-<td>NT$343.5</td>
-<td>18.15x</td>
-<td>12.74x</td>
-<td>2,124</td>
-<td class="positive">+53.0%</td>
-<td>31.18%</td>
-<td><span class="rating rating-yellow">🟡 觀望</span></td>
-</tr>
-<tr>
-<td><strong>3231 緯創</strong></td>
-<td>NT$141.0</td>
-<td>16.79x</td>
-<td>8.13x</td>
-<td>2,686</td>
-<td class="positive">+144.3%</td>
-<td>27.22%</td>
-<td><span class="rating rating-yellow">🟡 觀望</span></td>
-</tr>
-<tr>
-<td><strong>2376 技嘉</strong></td>
-<td>NT$319.5</td>
-<td>18.61x</td>
-<td>12.44x</td>
-<td>337</td>
-<td class="positive">+36.2%</td>
-<td>22.85%</td>
-<td><span class="rating rating-yellow">🟡 觀望</span></td>
-</tr>
-</tbody>
-</table>
-<p style="margin-top:10px;font-size:0.8rem;color:#aaa;">
-💡 觀察：緯創營收暴增144%最強，Forward PE 8.13最低最便宜。廣達ROE 31%最高體質最佳。鴻海體量大但ROE偏低。四檔皆為觀望，本益比16-19區間估值合理。
-</p>
-</div>
-
-<!-- 下游：AI 應用/雲端 -->
-<div class="section">
-<h2>🟢 下游：AI 應用 / 雲端服務</h2>
-<span class="tier-badge tier-downstream">雲端服務 × AI 應用 × 軟體</span>
-<table>
-<thead>
-<tr>
-<th>股票</th>
-<th>價格</th>
-<th>EPS</th>
-<th>本益比</th>
-<th>預估本益比</th>
-<th>營收年增</th>
-<th>ROE</th>
-<th>評等</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>MSFT 微軟</strong></td>
-<td>$412.66</td>
-<td>16.8</td>
-<td>24.56x</td>
-<td>21.32x</td>
-<td class="positive">+18.3%</td>
-<td>34.0%</td>
-<td><span class="rating rating-green">🟢 建議持有</span></td>
-</tr>
-<tr>
-<td><strong>GOOGL Alphabet</strong></td>
-<td>$388.64</td>
-<td>13.1</td>
-<td>29.67x</td>
-<td>26.87x</td>
-<td class="positive">+21.8%</td>
-<td>38.9%</td>
-<td><span class="rating rating-blue">🔵 成長潛力</span></td>
-</tr>
-<tr>
-<td><strong>META</strong></td>
-<td>$598.86</td>
-<td>27.49</td>
-<td>21.78x</td>
-<td>16.55x</td>
-<td class="positive">+33.1%</td>
-<td>32.9%</td>
-<td><span class="rating rating-blue">🔵 成長潛力</span></td>
-</tr>
-<tr>
-<td><strong>AMZN 亞馬遜</strong></td>
-<td>$268.99</td>
-<td>8.37</td>
-<td>32.14x</td>
-<td>27.25x</td>
-<td class="positive">+16.6%</td>
-<td>24.3%</td>
-<td><span class="rating rating-blue">🔵 成長潛力</span></td>
-</tr>
-</tbody>
-</table>
-<p style="margin-top:10px;font-size:0.8rem;color:#aaa;">
-💡 觀察：META成長動能最強（營收+33.1%）本益比最低21.8x。MSFT體質最穩健ROE 34%適合穩健持有。GOOGL ROE 38.9%最高。AMZN本益比偏高但AWS AI需求回溫。
-</p>
-</div>
-
-<!-- 下一階段技術：先進封裝/光通訊 -->
-<div class="section">
-<h2>🔵 下一階段技術：先進封裝 / 光通訊</h2>
-<span class="tier-badge tier-next">CoPoS × CPO × 矽光子 × 光封裝</span>
-
-<div class="tech-grid">
-<div class="tech-card">
-<h4>CoPoS 光學共封裝</h4>
-<p class="tech-status">發展階段：2024-25 量產初期</p>
-<p class="tech-status">全球領導：Broadcom, Marvell, Nvidia</p>
-<p class="tech-status">台灣：日月光(3714)、旺矽(6223)</p>
-<p class="tech-status">滲透率：2025-2027年從5%→20%</p>
-</div>
-<div class="tech-card">
-<h4>CPO 共同封裝光學</h4>
-<p class="tech-status">發展階段：標準制定完成，小量產</p>
-<p class="tech-status">全球領導：Cisco, Intel, Broadcom</p>
-<p class="tech-status">台灣：日月光(3714)、華邦電(2344)</p>
-<p class="tech-status">關鍵年：2026年為起飛年</p>
-</div>
-<div class="tech-card">
-<h4>矽光子 Silicon Photonics</h4>
-<p class="tech-status">發展階段：已商品化，成長最快</p>
-<p class="tech-status">全球領導：Intel, Cisco, Acacia</p>
-<p class="tech-status">台灣：華邦電(2344)、訊芯-KY(6776)</p>
-<p class="tech-status">CAGR：2024-2027年30-40%</p>
-</div>
-<div class="tech-card">
-<h4>光封裝 Optical Packaging</h4>
-<p class="tech-status">發展階段：成熟，800G放量中</p>
-<p class="tech-status">全球領導：Coherent, Lumentum</p>
-<p class="tech-status">台灣：統新(6443)、久元(8163)、訊芯-KY(6776)</p>
-<p class="tech-status">400G已量產，1.6T開發中</p>
-</div>
-</div>
-
-<h3 style="margin-top:25px;color:#ffd700;">📊 下一階段技術相關個股</h3>
-<table>
-<thead>
-<tr>
-<th>股票</th>
-<th>技術專注</th>
-<th>現價</th>
-<th>營收年增</th>
-<th>EPS</th>
-<th>本益比</th>
-<th>評等/目標價</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>2344.TW 華邦電</strong></td>
-<td>矽光子、CPO</td>
-<td>NT$119</td>
-<td class="positive">+42.4%</td>
-<td>0.88</td>
-<td>135x</td>
-<td><span class="invest-tag buy">買進 目標146元</span></td>
-</tr>
-<tr>
-<td><strong>6223.TWO 旺矽</strong></td>
-<td>CoPoS、CPO</td>
-<td>NT$5480</td>
-<td class="positive">+27.7%</td>
-<td>33.4</td>
-<td>164x</td>
-<td><span class="invest-tag avoid">觀望 目標4863元</span></td>
-</tr>
-<tr>
-<td><strong>3714.TW 日月光</strong></td>
-<td>CoPoS、CPO、光封裝</td>
-<td>NT$73.8</td>
-<td class="negative">-6.9%</td>
-<td>-3.69</td>
-<td>N/A</td>
-<td><span class="invest-tag avoid">觀望 等50-60元</span></td>
-</tr>
-<tr>
-<td><strong>3008.TW 大立光</strong></td>
-<td>CPO光學鏡頭、PIC鏡頭、FAU、光纖雷射</td>
-<td>NT$2475</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td><span class="invest-tag buy">跨界切入 值得關注</span></td>
-</tr>
-</tbody>
-</table>
-<p style="margin-top:10px;font-size:0.8rem;color:#aaa;">
-💡 備註：6776(訊芯-KY)、6443(統新)、8163(久元) 未能取得即時報價，建議另行查證。
-</p>
-</div>
-
-
-<!-- AI 伺服器完整供應鏈 -->
-<div class="section">
-<h2>🔗 AI 伺服器完整供應鏈</h2>
-<span class="tier-badge tier-upstream">從上游半導體到雲端應用</span>
-
-<h3 style="margin-top:20px;color:#ffd700;">🧱 上游：關鍵晶片/半導體</h3>
-<div class="tech-grid">
-<div class="tech-card">
-<h4>💻 IC設計</h4>
-<p class="tech-status">輝達(NVDA)、超微(AMD)</p>
-<p class="tech-status">Google (TPU)、亞馬遜(Trainium)</p>
-</div>
-<div class="tech-card">
-<h4>📜 EDA/IP</h4>
-<p class="tech-status">Synopsys、Cadence</p>
-<p class="tech-status">ARM、創意(3443)</p>
-</div>
-<div class="tech-card">
-<h4>🏭 晶圓製造</h4>
-<p class="tech-status">台積電(2330)、三星</p>
-<p class="tech-status">英特爾(Intel Foundry)</p>
-</div>
-<div class="tech-card">
-<h4>⚙️ 先進設備</h4>
-<p class="tech-status">艾司摩爾(ASML) - EUV獨占</p>
-<p class="tech-status">應用材料、科林、科磊</p>
-</div>
-</div>
-
-<h3 style="margin-top:20px;color:#ffd700;">💾 記憶體</h3>
-<div class="tech-grid">
-<div class="tech-card">
-<h4>🔋 HBM記憶體</h4>
-<p class="tech-status">SK海力士(龍頭)、美光、三星</p>
-<p class="tech-status">華邦電(2344)、南亞科(2408)</p>
-</div>
-</div>
-
-<h3 style="margin-top:20px;color:#ffd700;">📦 承載/電路板</h3>
-<div class="tech-grid">
-<div class="tech-card">
-<h4>🔲 ABF載板</h4>
-<p class="tech-status">欣興(3037)、南電(8046)</p>
-<p class="tech-status">景碩(3189)</p>
-</div>
-<div class="tech-card">
-<h4>🖨️ PCB板</h4>
-<p class="tech-status">健鼎(3044)、華通(2313)</p>
-<p class="tech-status">高技(5434)</p>
-</div>
-</div>
-
-<h3 style="margin-top:20px;color:#ffd700;">🔌 電源</h3>
-<div class="tech-grid">
-<div class="tech-card">
-<h4>⚡ 電源供應器</h4>
-<p class="tech-status">台達電(2308)、光寶(2301)</p>
-<p class="tech-status">康舒(6282)</p>
-</div>
-<div class="tech-card">
-<h4>🔋 UPS不斷電</h4>
-<p class="tech-status">旭隼(6409)</p>
-</div>
-</div>
-
-<h3 style="margin-top:20px;color:#ffd700;">❄️ 散熱</h3>
-<div class="tech-grid">
-<div class="tech-card">
-<h4>🌬️ 氣冷散熱</h4>
-<p class="tech-status">奇鋐(3017)、雙鴻(3324)</p>
-<p class="tech-status">建準(2420)</p>
-</div>
-<div class="tech-card">
-<h4>💧 水冷散熱</h4>
-<p class="tech-status">雙鴻(3324)、奇鋐(3017)</p>
-</div>
-<div class="tech-card">
-<h4>🧪 散熱膏</h4>
-<p class="tech-status">華立(3013)</p>
-</div>
-</div>
-
-<h3 style="margin-top:20px;color:#ffd700;">🔗 連接/傳輸</h3>
-<div class="tech-grid">
-<div class="tech-card">
-<h4>🔌 高速連接器</h4>
-<p class="tech-status">嘉澤(3533)、宣德(5457)</p>
-<p class="tech-status">凡甲(3526)、優群(3217)</p>
-</div>
-<div class="tech-card">
-<h4>🔀 高速線材</h4>
-<p class="tech-status">萬泰科(6190)</p>
-</div>
-<div class="tech-card">
-<h4>💡 光纖/光學元件</h4>
-<p class="tech-status">大立光(3008) - CPO/FAU</p>
-<p class="tech-status">聯亞(3081)、光環(3234)</p>
-</div>
-</div>
-
-<h3 style="margin-top:20px;color:#ffd700;">🏗️ 機構件</h3>
-<div class="tech-grid">
-<div class="tech-card">
-<h4>📦 機殼/機構</h4>
-<p class="tech-status">勤誠(8210)、營邦(3693)</p>
-</div>
-<div class="tech-card">
-<h4>⚙️ 滑軌</h4>
-<p class="tech-status">川湖(2059)</p>
-</div>
-</div>
-
-<h3 style="margin-top:20px;color:#ffd700;">🖥️ 伺服器組裝</h3>
-<div class="tech-grid">
-<div class="tech-card">
-<h4>🏭 ODM代工</h4>
-<p class="tech-status">鴻海(2317)、廣達(2382)</p>
-<p class="tech-status">緯創(3231)、英業達(2356)</p>
-</div>
-<div class="tech-card">
-<h4>🖥️ 白牌伺服器</h4>
-<p class="tech-status">技嘉(2376)、華碩(2357)</p>
-</div>
-</div>
-
-<h3 style="margin-top:20px;color:#ffd700;">☁️ 軟體/資料中心</h3>
-<div class="tech-grid">
-<div class="tech-card">
-<h4>☁️ 雲端平台</h4>
-<p class="tech-status">AWS、Google Cloud、Azure</p>
-</div>
-<div class="tech-card">
-<h4>🤖 AI軟體</h4>
-<p class="tech-status">MSFT、Google、META</p>
-</div>
-</div>
-
-<h3 style="margin-top:20px;color:#ff6b6b;">⚠️ 關鍵「被掐脖子」環節</h3>
-<table>
-<thead>
-<tr><th>環節</th><th>公司</th><th>風險</th></tr>
-</thead>
-<tbody>
-<tr><td><strong>EUV光刻機</strong></td><td>ASML</td><td>幾乎壟斷，被掐脖子</td></tr>
-<tr><td><strong>CoWoS封裝</strong></td><td>台積電</td><td>產能有限，AI晶片瓶頸</td></tr>
-<tr><td><strong>HBM記憶體</strong></td><td>SK海力士</td><td>主要由韓國供應</td></tr>
-<tr><td><strong>EDA軟體</strong></td><td>Synopsys、Cadence</td><td>美國壟斷</td></tr>
-<tr><td><strong>ABF載板</strong></td><td>欣興、南電</td><td>產能緊俏</td></tr>
-</tbody>
-</table>
-
-<h3 style="margin-top:20px;color:#3FB950;">💡 台灣供應鏈投資評等</h3>
-<table>
-<thead>
-<tr><th>優先</th><th>公司</th><th>理由</th></tr>
-</thead>
-<tbody>
-<tr><td>⭐⭐⭐</td><td>台積電(2330)</td><td>晶圓代工+CoWoS封裝，AI心臟</td></tr>
-<tr><td>⭐⭐⭐</td><td>日月光(3714)</td><td>CoPoS/CPO封裝技術領先</td></tr>
-<tr><td>⭐⭐⭐</td><td>欣興(3037)、南電(8046)</td><td>ABF載板，先進封裝必備</td></tr>
-<tr><td>⭐⭐</td><td>奇鋐(3017)、雙鴻(3324)</td><td>散熱需求暴增，散熱當紅</td></tr>
-<tr><td>⭐⭐</td><td>鴻海(2317)、廣達(2382)</td><td>伺服器代工，AI硬體出口</td></tr>
-<tr><td>⭐⭐</td><td>台達電(2308)</td><td>電源供應龍頭</td></tr>
-<tr><td>⭐</td><td>華邦電(2344)</td><td>HBM+矽光子，記憶體切入</td></tr>
-<tr><td>⭐</td><td>大立光(3008)</td><td>CPO光學鏡頭，跨界切入</td></tr>
+<tr><td><span class="rating rating-green">🟢 建議持有</span></td><td><strong>2382 廣達</strong></td><td>NT$343.5</td><td>NT$450</td><td class="positive">+31%</td><td>ROE 31.2%，殖利率3.78%，兼具成長與收益</td></tr>
+<tr><td><span class="rating rating-green">🟢 建議持有</span></td><td><strong>3231 緯創</strong></td><td>NT$142.5</td><td>NT$190</td><td class="positive">+33%</td><td>PE 8.2x最低，營收成長144%最強</td></tr>
+<tr><td><span class="rating rating-green">🟢 建議持有</span></td><td><strong>2317 鴻海</strong></td><td>NT$251</td><td>NT$330</td><td class="positive">+28%</td><td>PE 12.5x，營收+22.3%，AI伺服器組裝</td></tr>
+<tr><td><span class="rating rating-green">🟢 建議持有</span></td><td><strong>2308 台達電</strong></td><td>NT$2,200</td><td>NT$2,376</td><td class="positive">+8%</td><td>AI電源龍頭，體質穩健</td></tr>
+<tr><td><span class="rating rating-blue">🔵 成長潛力</span></td><td><strong>2330 台積電</strong></td><td>NT$2,265</td><td>NT$2,800</td><td class="positive">+23.6%</td><td>AI CoWoS需求爆發，QoQ +84%，護城河深</td></tr>
+<tr><td><span class="rating rating-blue">🔵 成長潛力</span></td><td><strong>3017 奇鋐</strong></td><td>NT$2,565</td><td>NT$2,950</td><td class="positive">+15%</td><td>營收成長128.5%最強，液冷散熱技術領先</td></tr>
+<tr><td><span class="rating rating-blue">🔵 成長潛力</span></td><td><strong>6409 旭隼</strong></td><td>NT$767</td><td>NT$882</td><td class="positive">+15%</td><td>PE 19低估，高股息5.63%</td></tr>
+<tr><td><span class="rating rating-blue">🔵 成長潛力</span></td><td><strong>3037 欣興</strong></td><td>NT$861</td><td>NT$1,100</td><td class="positive">+27.8%</td><td>ABF載板受AI GPU拉動，NVIDIA供應商</td></tr>
+<tr><td><span class="rating rating-blue">🔵 成長潛力</span></td><td><strong>2344 華邦電</strong></td><td>NT$119</td><td>NT$146</td><td class="positive">+23%</td><td>HBM+矽光子，記憶體切入先進技術</td></tr>
+<tr><td><span class="rating rating-yellow">🟡 觀望</span></td><td><strong>3714 日月光</strong></td><td>NT$74</td><td>NT$85</td><td class="positive">+15%</td><td>營收波動大，先進封裝佈局完整</td></tr>
+<tr><td><span class="rating rating-yellow">🟡 觀望</span></td><td><strong>8210 勤誠</strong></td><td>NT$1,545</td><td>NT$1,750</td><td class="positive">+13%</td><td>營收+71.1%但PE 23x偏高</td></tr>
+<tr><td><span class="rating rating-orange">🟠 留意</span></td><td><strong>8046 南電</strong></td><td>NT$908</td><td>NT$1,150</td><td class="positive">+27%</td><td>PE 301x偏高，ROE 4.3%偏低</td></tr>
+<tr><td><span class="rating rating-orange">🟠 留意</span></td><td><strong>3008 大立光</strong></td><td>NT$2,475</td><td>待評估</td><td>—</td><td>CPO跨界切入但本業放緩</td></tr>
 </tbody>
 </table>
 </div>
 
 <div class="section">
-<h2>💡 投資建議摘要</h2>
-<div class="summary-box">
-<h3>🏆 龍龍精選</h3>
-<table>
-<tr><th>評等</th><th>股票</th><th>理由</th></tr>
-<tr>
-<td><span class="rating rating-green">🟢 建議持有</span></td>
-<td>MSFT微軟、台積電(2330)</td>
-<td>體質佳、本益比合理、長期穩健</td>
-</tr>
-<tr>
-<td><span class="rating rating-blue">🔵 成長潛力</span></td>
-<td>META、GOOGL、AMZN、廣達、技嘉</td>
-<td>成長動能強、ROE優秀</td>
-</tr>
-<tr>
-<td><span class="rating rating-yellow">🟡 觀望</span></td>
-<td>NVDA、鴻海、緯創</td>
-<td>估值合理但不便宜</td>
-</tr>
-<tr>
-<td><span class="rating rating-orange">🟠 留意</span></td>
-<td>AMD</td>
-<td>PE 153.96 過高，風險大</td>
-</tr>
-</table>
-</div>
+<h2>📊 個股詳細分析</h2>
 
-<h3 style="margin-top:20px;color:#ffd700;">🚀 下一階段技術首選</h3>
-<table>
-<tr><th>技術</th><th>首選股票</th><th>理由</th></tr>
-<tr>
-<td>矽光子</td>
-<td><strong>2344 華邦電</strong></td>
-<td>營收+42.4%、矽光子已量產、目標價146元(+23%)</td>
-</tr>
-<tr>
-<td>CoPoS/CPO</td>
-<td><strong>6223 旺矽</strong></td>
-<td>AI先進封裝檢測需求強，但PE 164過高，等拉回</td>
-</tr>
-<tr>
-<td>先進封裝</td>
-<td><strong>3714 日月光</strong></td>
-<td>技術領先但仍虧損，等股價修正至50-60元再做長線</td>
-</tr>
-</table>
+<h3>🧱 半導體上游</h3>
+<div class="stock-card"><h4>2330 台積電</h4><p>🔵 成長潛力 | 現價: NT$2,265 | 目標價: NT$2,800 | 潛在漲幅: +23.6%</p><p class="reason">AI CoWoS先進封裝需求爆發，Q1營收YoY +84%顯示加速成長態勢。製程技術全球領先，護城河極深。評價已反映部分AI利多，但實質訂單能見度佳，仍有上行空間。</p></div>
+<div class="stock-card"><h4>3037 欣興</h4><p>🔵 成長潛力 | 現價: NT$861 | 目標價: NT$1,100 | 潛在漲幅: +27.8%</p><p class="reason">ABF載板需求受AI GPU/ASIC拉動明確。欣興為NVIDIA關鍵載板供應商之一，2025-2026年訂單能見度高。營收看 +624% YoY顯示需求爆發。</p></div>
+<div class="stock-card"><h4>8046 南電</h4><p>🟠 留意 | 現價: NT$908 | 目標價: NT$1,150 | 潛在漲幅: +26.7%</p><p class="reason">PE 301x極高，ROE僅4.3%偏低。雖然營收YoY +41.9%，但估值過高，建議謹慎。</p></div>
+
+<h3>⚡ 電源/散熱</h3>
+<div class="stock-card"><h4>2308 台達電</h4><p>🟢 建議持有 | 現價: NT$2,200 | 目標價: NT$2,376 | 潛在漲幅: +8%</p><p class="reason">AI電源龍頭，但PE 95偏高，30天已大漲45.7%。體質穩健，適合長期持有。</p></div>
+<div class="stock-card"><h4>3017 奇鋐</h4><p>🔵 成長潛力 | 現價: NT$2,565 | 目標價: NT$2,950 | 潛在漲幅: +15%</p><p class="reason">營收成長128.5%最強，液冷散熱技術領先。AI伺服器散熱需求暴增，主要受益者。</p></div>
+<div class="stock-card"><h4>6409 旭隼</h4><p>🔵 成長潛力 | 現價: NT$767 | 目標價: NT$882 | 潛在漲幅: +15%</p><p class="reason">PE 19低估，高股息5.63%。UPS不斷電系統需求穩定，但營收衰退-15.8%需留意。</p></div>
+
+<h3>🖥️ ODM/組裝</h3>
+<div class="stock-card"><h4>2382 廣達</h4><p>🟢 建議持有 | 現價: NT$343.5 | 目標價: NT$450 | 潛在漲幅: +31%</p><p class="reason">ROE 31.2%，股息殖利率3.78%兼具成長與收益。營收+53%，AI伺服器訂單強勁。</p></div>
+<div class="stock-card"><h4>3231 緯創</h4><p>🟢 建議持有 | 現價: NT$142.5 | 目標價: NT$190 | 潛在漲幅: +33%</p><p class="reason">Forward PE 8.2x最低，營收成長144%最強。AI伺服器出貨飆升，性價比最高。</p></div>
+<div class="stock-card"><h4>2317 鴻海</h4><p>🟢 建議持有 | 現價: NT$251 | 目標價: NT$330 | 潛在漲幅: +28%</p><p class="reason">PE 12.5x，營收+22.3%，AI伺服器組裝訂單穩健。集團資源整合能力強。</p></div>
+
+<h3>💾 記憶體</h3>
+<div class="stock-card"><h4>2344 華邦電</h4><p>🔵 成長潛力 | 現價: NT$119 | 目標價: NT$146 | 潛在漲幅: +23%</p><p class="reason">HBM+矽光子雙佈局，記憶體切入先進技術。矽光子已小量出貨，成長快速。</p></div>
+
 </div>
 
 <div class="footer">
-<p>本報告僅供參考，不構成投資建議。數據來源：yfinance | 更新時間：2026-05-12</p>
+<p>📊 數據來源: Yahoo Finance | 本報告僅供參考，不构成投資建議</p>
 </div>
+
 </div>
 </body>
 </html>
